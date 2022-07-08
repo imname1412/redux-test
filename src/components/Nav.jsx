@@ -4,10 +4,11 @@ import { useSelector } from 'react-redux'
 
 
 const Nav = () => {
-    const link = ['home','counter','about']
+    const link = ['home','counter','about','hash']
 
     // #TODO: //* readOnly
     const count = useSelector(state => state.counter.value)
+    const auth = useSelector(state => state.auth.value)
 
   return (
     <nav className='bg-gray-900 w-full h-16 flex items-center justify-center px-5 gap-1'>
@@ -46,6 +47,10 @@ const Nav = () => {
                     </div>
                 </div>
             </div>
+        </div>
+        <div>
+            {auth? 'login':'logout'}
+            
         </div>
     </nav>
   )
